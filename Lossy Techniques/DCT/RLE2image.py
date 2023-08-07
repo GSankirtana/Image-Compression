@@ -6,16 +6,6 @@ import time
 from zigzag import *
 
 def calculate_psnr(original_image, reconstructed_image):
-    """
-    Calculates the PSNR (Peak Signal-to-Noise Ratio) between the original and reconstructed images.
-
-    Args:
-    - original_image: numpy array, original image.
-    - reconstructed_image: numpy array, reconstructed image.
-
-    Returns:
-    - psnr: float, PSNR value.
-    """
     mse = np.mean((original_image - reconstructed_image) ** 2)
     max_pixel_value = np.max(original_image)
     psnr = 20 * math.log10(max_pixel_value / math.sqrt(mse))
